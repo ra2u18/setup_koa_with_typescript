@@ -1,0 +1,42 @@
+{
+  "name": "koa-with-typescript",
+  "scripts": {
+    "start:prod": "rimraf build && tsc && node build/src/index.js",
+    "start:dev": "nodemon --ignore tests/ --watch src -e ts --exec ts-node src/index.ts",
+    "start:development": "tsc-watch --noClear --onSuccess 'node build/src/index.js'",
+    "build": "rimraf build && tsc",
+    "test": "jest",
+    "test:coverage": "jest --detectOpenHandles --forceExit --coverage && cat ./coverage/lcov.info",
+    "format:write": "prettier --write \"src/**/*.{ts,js}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js}\""
+  },
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "dotenv": "^16.0.3",
+    "http-status-codes": "^2.2.0",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.3.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/koa": "^2.13.5",
+    "@types/koa-bodyparser": "^4.3.10",
+    "@types/koa__cors": "^3.3.0",
+    "@types/koa__router": "^12.0.0",
+    "@types/node": "^18.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
+    "jest": "^29.4.2",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.5"
+  }
+}
